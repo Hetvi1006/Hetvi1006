@@ -1,0 +1,24 @@
+{% extends 'base_templates/base2.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>image</title> 
+</head> 
+<center>
+<body> 
+    <form method = "post" enctype="multipart/form-data"> 
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <button type="submit">Upload Image</button> 
+        
+    </form> 
+    <div>
+    <a href="{% url 'profile' %}"><button type="submit">Back To Profile</button> </a>
+</div>
+</body> 
+</center>
+</html> 
+{% endblock content %}

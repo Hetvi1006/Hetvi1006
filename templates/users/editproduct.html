@@ -1,0 +1,64 @@
+{% extends 'base_templates/base3.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method="POST" class="post-form" action="/updateproduct/{{ subcats.id }}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Update Details</h3>  
+    </div>  
+  </div>  
+  <!-- <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Id:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="id" id="id_id" required maxlength="20" value="{{ subcats.id }}"/>  
+    </div>  
+  </div>   -->
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Product Name:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="cname" id="id_cname" required maxlength="100" value="{{ subcats.cname }}"/>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Image URL:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="cimage" id="id_cimage" required maxlength="100" value="{{ subcats.cimage }}" />  
+    </div>  
+  </div> 
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Price:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="cprice" id="id_cprice" required maxlength="100" value="{{ subcats.cprice }}" />  
+    </div>  
+  </div> 
+  <div class="form-group row">  
+      <label class="col-sm-2 col-form-label">Description:</label>  
+      <div class="col-sm-4">  
+          <input type="text" name="cdes" id="id_cdes" required maxlength="100" value="{{ subcats.cdes }}" />  
+      </div>  
+  </div> 
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Discount:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="disc" id="id_disc" required maxlength="100" value="{{ subcats.disc }}" />  
+    </div>  
+  </div>
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Discount Price:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="dprice" id="id_dprice" required maxlength="100" value="{{ subcats.dprice }}" />  
+    </div>  
+  </div> 
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+		<button type="submit" class="btn btn-primary" value="{{subcats.id}}" name="id">Submit</button>
+    </div>  
+  </div>  
+    </div>  
+</form>  
+{% endblock content %} 

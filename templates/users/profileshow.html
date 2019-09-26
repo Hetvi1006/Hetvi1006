@@ -1,0 +1,34 @@
+{% extends 'base_templates/base3.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<center><body>  
+		<h1>Profile Table</h1>
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>ID</th>  
+        <th>Image</th>
+        <th>User_ID</th>   
+        <!-- <th>Actions</th>   -->
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for profiles in profiles %}  
+    <tr>  
+        <td>{{ profiles.id }}</td>  
+        <td>{{ profiles.image }}</td>  
+        <td>{{ profiles.user_id}}</td>
+        <!-- <td>  
+            <a href="/edit/{{ profiles.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/udelete/{{ profiles.id }}">Delete</a>  
+        </td>   -->
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<!-- <center><a href="/" class="btn btn-primary">Add New Record</a></center>   -->
+</body> </center>
+</html>  
+{% endblock content %}
